@@ -1,30 +1,92 @@
 #number guessing game
 secret=10
 guess=int(input("Guess the number: "))
-difference=guess-secret
+max_lives=5
 
 while guess!=secret:
     print("Guess Again! Wrong answer")
-    guess2=int(input("Guess the number: "))
-    if guess2!=secret:
-        print("Guess Again! Wrong answer")
-        guess3=int(input("Guess the number: "))
-    if guess3!=secret:
-        print("Guess Again! Wrong answer")
-        guess4=int(input("Guess the number: "))
-    if guess4!=secret:
-        print("Guess Again! Wrong answer")
-        guess5=int(input("Guess the number: "))
-    if guess5!=secret:
-        print("Sorry ! 5 wrong attempts. Attempts Finished.Try again! Better luck next time!!!")
-    elif guess or guess2 or guess3 or guess4 or guess5==secret:
-        print("Congratulations!! You have correctly guessed the secret or missing number...")
-    elif guess or guess2 or guess3 or guess4 or guess5!=secret:
-        print("The secret number waas 10.")
-    break
+    if guess > 20:
+        print("Ice cold!!")
+    elif guess > 15:
+        print("Cold...")
+    elif guess >= 8:
+        print("Hot!!!")
+    else:
+        print("Warm...")
+    max_lives -= 1
+    print("❤️ " * max_lives)
+    print() 
 
-
-if difference>guess:
-    print("Ice cold")
-else:
-    print("Hot")
+    if guess!=secret:
+        guess=int(input("Guess the number: "))
+        if guess != secret:
+            print("Guess Again! Wrong answer")
+            
+            if guess > 20:
+                print("Ice cold!!")
+            elif guess > 15:
+                print("Cold...")
+            elif guess >= 8:
+                print("Hot!!!")
+            else:
+                print("Warm...")
+            max_lives -= 1
+            print("❤️ " * max_lives)
+            print()  
+            
+    if guess!=secret:
+        guess=int(input("Guess the number: "))
+        if guess != secret:
+            print("Guess Again! Wrong answer")
+            
+            if guess > 20:
+                print("Ice cold!!")
+            elif guess > 15:
+                print("Cold...")
+            elif guess >= 8:
+                print("Hot!!!")
+            else:
+                print("Warm...")
+            max_lives -= 1
+            print("❤️ " * max_lives)
+            print()  
+                
+    if guess!=secret:
+        guess=int(input("Guess the number: "))
+        if guess != secret:
+            print("Guess Again! Wrong answer")
+            
+            if guess > 20:
+                print("Ice cold!!")
+            elif guess > 15:
+                print("Cold...")
+            elif guess >= 8:
+                print("Hot!!!")
+            else:
+                print("Warm...")
+            max_lives -= 1
+            print("❤️ " * max_lives)
+            print()  
+                
+    if guess!=secret:
+        guess=int(input("Guess the number: "))
+        print("Guess Again! Wrong answer")
+        if guess > 20:
+            print("Ice cold!!")
+        elif guess > 15:
+            print("Cold...")
+        elif guess >= 8:
+            print("Hot!!!")
+        else:
+            print("Warm...")
+        max_lives -= 1
+        print("❤️ " * max_lives)
+        print()  
+  
+    if max_lives==0:
+        break
+if guess!=secret:
+    print("Sorry ! 5 wrong attempts. Attempts Finished.Try again! Better luck next time!!!")
+    print("The secret number was 10.")
+elif guess==secret:
+    print("Congratulations!! You have correctly guessed the secret or missing number...")
